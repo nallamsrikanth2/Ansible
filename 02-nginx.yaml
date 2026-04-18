@@ -1,0 +1,9 @@
+- name: install the nginx
+  hosts: web
+  become: yes # -b is the root user
+  tasks:
+  - name: install the nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: latest
+      enabled: yes
