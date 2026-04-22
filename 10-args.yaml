@@ -4,3 +4,13 @@
   - name: pass the args
     ansible.builtin.debug:
       msg: "hello {{NAME}} good {{WISHES}}"
+
+
+
+  # 1. Args
+  # 2. task level
+  # 3. vars_files
+  # 4. Prompt 
+  # 5. play level
+  # 6. inventory vars
+  # 7. roles vars
