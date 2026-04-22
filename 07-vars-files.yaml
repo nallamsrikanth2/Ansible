@@ -1,6 +1,6 @@
 - name: passing the variable fron outside
   hosts: localhost
-  vars:
+  vars_files:
     vars.yaml
   tasks:
   - name: print the vars information from outside
