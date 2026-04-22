@@ -1,0 +1,6 @@
+- name: pass the args from outside
+  hosts: localhost
+  tasks:
+  - name: pass the args
+    ansible.builtin.debug:
+      msg: "hello {{NAME} good {{WISHES}}"
