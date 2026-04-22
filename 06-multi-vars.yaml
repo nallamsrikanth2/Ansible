@@ -1,13 +1,13 @@
 - name: multi level variables
   hosts: localhost
   vars:
-    COURSE: "AWS DEVOPS"
+    COURSE: "AWS DEVOPS"  #play level variables
     TRAINER: "SIVAKUMAR REDDY"
     DURATION: "120HR"
   tasks:
   - name: pring the information
     vars:
-      COURSE: "jenkins"
+      COURSE: "jenkins"  #task level variables
       TRAINER: "siva"
       DURATION: 10hrs"
     ansible.builtin.debug:
