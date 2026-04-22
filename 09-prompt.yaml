@@ -12,4 +12,3 @@
     ansible.builtin.debug:
       msg: "username is {{USERNAME}} and password is {{PASSWORD}}"
 
-
