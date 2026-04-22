@@ -1,9 +1,9 @@
 - name: creating the variable
   hosts: localhost
   vars:
-  NAME: "srikanth"
-  PLACE: "kadapa"
-  VILLAGE: "madakalavaripalle"
+    NAME: "srikanth"
+    PLACE: "kadapa"
+    VILLAGE: "madakalavaripalle"
   tasks:
   - name: print the information
     ansible.builtin.debug:
