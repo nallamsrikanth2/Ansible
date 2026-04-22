@@ -1,0 +1,11 @@
+- name: passing the variable fron outside
+  hosts: localhost
+  vars_files:
+    vars.yaml
+  tasks:
+  - name: print the vars information from outside
+    ansible.builtin.debug:
+      msg: "course name is {{COURSE}} and trainer is {{TRAINER}} and duration is {{DURATION}}"
+
+
+
