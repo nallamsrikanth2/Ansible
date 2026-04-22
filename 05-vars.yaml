@@ -1,6 +1,8 @@
+# this is play level variable
+
 - name: creating the variable
   hosts: localhost
-  vars:
+  vars:     #play level variable
     NAME: "srikanth"
     PLACE: "kadapa"
     VILLAGE: "madakalavaripalle"
