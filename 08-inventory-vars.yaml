@@ -1,6 +1,6 @@
 - name: inventory var vars_files
   hosts: localhost
   tasks:
-  - name: print the information of inventory varfiles vars_files
+  - name: print the information of inventory varfiles
     ansible.builtin.debug:
       msg: "course: {{COURSE}} and trainer is {{TRAINER}} and Duration is {{DURATION}}"
