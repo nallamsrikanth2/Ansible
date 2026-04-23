@@ -23,17 +23,6 @@
     ansible.builtin.debug:
       msg: "{{wishes | lower }}"
 
-# - name: dictionary to list
-#   hosts: localhost
-#   vars:
-#    tools:
-#       aws: 2
-#       jenkins: 2
-#       terraform: 2
-#   tasks:
-#   - name: 
-
-
 - name: remove duplicate numbers
   hosts: localhost
   vars:
@@ -51,3 +40,20 @@
   - name: find the min ages
     ansible.builtin.debug:
       msg: "min ages are :{{ages | min}} and max ages are :{{ages | max}}"  
+
+
+- name: change dict2items
+  hosts: localhost
+  vars:
+    dict:
+      course: aws
+      trainer: siva
+      duration: 120
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "{{dict}}"
+      
+  - name: change the dict2items
+    ansible.builtin.debug:
+      msg: "{{dict | dict2items }}"
