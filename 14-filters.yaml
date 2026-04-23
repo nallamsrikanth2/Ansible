@@ -71,6 +71,6 @@
 
   - name: change the items2dict
     ansible.builtin.debug:
-      msg: "{{lists | ltems2dict}}"
+      msg: "{{lists | items2dict }}"
 
 
