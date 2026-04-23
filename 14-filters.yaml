@@ -46,7 +46,7 @@
 - name: min and max age
   hosts: localhost
   vars:
-    ages: [ 23 65 12 67 54 87 100]
+    ages: [ 23, 65, 12, 67, 54, 87, 100]
   tasks:
   - name: find the min ages
     ansible.builtin.debug:
