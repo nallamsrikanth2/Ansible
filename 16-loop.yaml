@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: install the packages
-    ansible.builtin.command:
+    ansible.builtin.dnf:
       name: "{{item}}"
       state: latest
     loop:
@@ -18,7 +18,7 @@
   become: yes
   tasks:
   - name: install the packages
-    ansible.builtin.command:
+    ansible.builtin.dnf:
       name: "{{item.name}}"
       state: "{{item.state}}"
     loop:
