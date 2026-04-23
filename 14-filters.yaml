@@ -4,3 +4,12 @@
   - name: print the information
     ansible.builtin.debug:
       msg: "location is {{location | default ('banglore')}}"
+
+- name: uppercase
+  hosts: localhost
+  vars:
+    wishes: "good morning namma bengaluru"
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: "{{wishes | upper }}"
