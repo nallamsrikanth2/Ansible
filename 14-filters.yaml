@@ -13,3 +13,12 @@
   - name: print the information
     ansible.builtin.debug:
       msg: "{{wishes | upper }}"
+
+- name: lowercase
+  hosts: localhost
+  vars:
+    wishes: "HAPPY BIRTHDAY TO ME"
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: "{{wishes | lower }}"
