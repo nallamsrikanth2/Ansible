@@ -42,3 +42,12 @@
   - name: remove duplicates
     ansible.builtin.debug:
       msg: "{{numbers | unique }}"
+  
+- name: min and max age
+  hosts: localhost
+  vars:
+    ages: [ 23 65 12 67 54 87 100]
+  tasks:
+  - name: find the min ages
+    ansible.builtin.debug:
+      msg: "min ages are :{{ages | min}} and max ages are :{{ages | max}}"  
