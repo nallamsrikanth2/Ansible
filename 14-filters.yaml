@@ -1,0 +1,7 @@
+- name: default value
+  hosts: localhost
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: "location is {{location}}"
+      
