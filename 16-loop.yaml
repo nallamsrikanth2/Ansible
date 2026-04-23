@@ -1,5 +1,6 @@
 - name: install the packages
   hosts: localhost
+  become: yes
   tasks:
   - name: install the packages
     ansible.builtin.command:
@@ -14,6 +15,7 @@
 
 - name: install the packages
   hosts: localhost
+  become: yes
   tasks:
   - name: install the packages
     ansible.builtin.command:
