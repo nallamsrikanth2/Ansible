@@ -3,5 +3,4 @@
   tasks:
   - name: print the information
     ansible.builtin.debug:
-      msg: "location is {{location}}"
-      
+      msg: "location is {{location | ('banglore')}}"
