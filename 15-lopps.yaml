@@ -3,7 +3,7 @@
   tasks:
   - name: loops
     ansible.builtin.debug:
-      msg: "hello {{items}}"
+      msg: "hello {{item}}"
     loop:
     - linux
     - jenkins
