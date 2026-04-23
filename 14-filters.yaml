@@ -53,7 +53,24 @@
   - name: before convert
     ansible.builtin.debug:
       msg: "{{dict}}"
-      
+
   - name: change the dict2items
     ansible.builtin.debug:
       msg: "{{dict | dict2items }}"
+
+- name: items2dict
+  hosts: localhost
+  vars:
+    lists:
+    - {  "key": "course", "value": "aws" }
+    - { "key": "trainer", "value": "siva" }
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "{{lists}}"
+
+  - name: change the items2dict
+    ansible.builtin.debug:
+      msg: "{{lists | ltems2dict}}"
+
+
