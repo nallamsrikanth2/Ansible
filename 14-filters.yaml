@@ -73,4 +73,6 @@
     ansible.builtin.debug:
       msg: "{{lists | items2dict }}"
 
+      
+
 
