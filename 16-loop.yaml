@@ -1,0 +1,25 @@
+- name: install the packages
+  hosts: localhost
+  tasks:
+  - name: install the packages
+    ansible.builtin.command:
+      name: "{{item}}"
+      state: latest
+    loop:
+    - mysql
+    - git
+    - nginx
+
+
+
+- name: install the packages
+  hosts: localhost
+  tasks:
+  - name: install the packages
+    ansible.builtin.command:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loop:
+    - { name: 'mysql', state: 'absent'}
+    - { name: 'git' , state: 'latest'}
+    - { name: 'nginx', state: 'absent'}
