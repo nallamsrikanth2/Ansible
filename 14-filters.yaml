@@ -22,3 +22,23 @@
   - name: print the information
     ansible.builtin.debug:
       msg: "{{wishes | lower }}"
+
+# - name: dictionary to list
+#   hosts: localhost
+#   vars:
+#    tools:
+#       aws: 2
+#       jenkins: 2
+#       terraform: 2
+#   tasks:
+#   - name: 
+
+
+- name: remove duplicate numbers
+  hosts: localhost
+  vars:
+    numbers: [1,2,2,2,3,4,5]
+  tasks:
+  - name: remove duplicates
+    ansible.builtin.debug:
+      msg: "{{numbers | unique }}"
