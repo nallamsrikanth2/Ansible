@@ -52,6 +52,13 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
+  - name: install the python libraries
+    ansible.builtin.pip:
+      name:
+      - mypysql
+      - cryptography
+      executable: pip3.9
+
 
   - name: load the schema
     community.mysql.mysql_db:
