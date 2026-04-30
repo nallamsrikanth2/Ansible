@@ -16,11 +16,6 @@
       state: started
       enabled: yes
 
-  - name: install the python dependies
-    ansible.builtin.pip:
-      name: 
-      - mypysql
-      - cr
   - name: check root setup or not
     community.mysql.mysql_info:
       login_user: "{{login_user}}"
