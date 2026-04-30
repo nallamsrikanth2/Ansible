@@ -8,10 +8,11 @@
       state: latest
   
   - name: start and enable the nginx server
-     ansible.builtin.service:
+    ansible.builtin.service:
       name: nginx
       state: started
       enabled: yes
+      
    
   - name: remove the html file
     ansible.builtin.file:
