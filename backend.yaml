@@ -33,3 +33,8 @@
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes
+  
+  - name: install the libraries
+    ansible.builtin.command: mpm install
+    args:
+      chdir: /app
