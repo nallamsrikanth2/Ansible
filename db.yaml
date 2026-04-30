@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars_prompt:
-    - name: username
+    - name: password
       prompt: What is your password?
       private: false
       login_user: root
