@@ -1,3 +1,8 @@
 COURSE: "AWS"
 TRAINER: "SIVA"
 DURATION: "120HR"
+
+
+
+login_user: root
+login_host: db.nsrikanth.online

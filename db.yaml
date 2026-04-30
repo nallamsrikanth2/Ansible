@@ -5,8 +5,6 @@
     - name: password
       prompt: What is your password?
       private: false
-      login_user: root
-      login_host: db.nsrikanth.online
   tasks:
   - name: install the mysql server
     ansible.builtin.dnf:
