@@ -1,14 +1,23 @@
 - name: create the db server
   hosts: db
   become: yes
+  vars:
+    login_user: root
+    login_password: ExpenseApp@1
+    login_host: db.nsrikanth.online
   tasks:
   - name: install the mysql server
     ansible.builtin.dnf:
       name: mysql-server
       state: latest
-  - name: start the service
+  - name: start and enable the service
     ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
-  
+  - name: check root setup or not
+    community.mysql.mysql_info:
+       login_user: "{{login_user}}"
+       login_password: "{{ login_password}}"
+       login_host: "{{login_host}}"
+       filter: version
