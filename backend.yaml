@@ -1,6 +1,12 @@
 - name: crete the backend server
   hosts: backend
   become: yes
+  vars_files:
+    vars.yaml
+  vars_prompt:
+    - name: password
+      prompt: what is the password?
+      private: false
   tasks:
   - name: disable the nodejs
     ansible.builtin.dnf:
@@ -11,8 +17,11 @@
 
   - name: install the nodejs
     ansible.builtin.dnf:
-      name: nodejs
+      name: "{{item}}"
       state: latest
+      loop:
+      - nodejs
+      - mysql
   
   - name: create the user
     ansible.builtin.user:
@@ -38,3 +47,27 @@
     ansible.builtin.command: npm install
     args:
       chdir: /app
+
+  - name: copy the backend.service 
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
+
+  - name: load the schema
+    community.mysql.mysql_db:
+      login_host: "{{login_host}}"
+      login_user: "{{login_user}}"
+      login_password: "{{login_password}}"
+      name: all
+      state: import
+      target: /app/schema/backend.sql
+
+  - name: deamon relod the backend
+    ansible.builtin.systemd_service:
+      daemon_reload: true
+
+  - name: start and enabled for backend server
+    ansible.builtin.service:
+      name: backend
+      state: started
+      enabled: yes
