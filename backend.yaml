@@ -19,7 +19,7 @@
     ansible.builtin.dnf:
       name: "{{item}}"
       state: latest
-      loop:
+    loop:
       - nodejs
       - mysql
   
