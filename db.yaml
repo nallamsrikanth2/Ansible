@@ -6,7 +6,7 @@
       prompt: What is your password?
       private: false
   vars_files:
-    vars_files
+    vars.yaml
   tasks:
   - name: install the mysql server
     ansible.builtin.dnf:
