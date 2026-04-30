@@ -35,6 +35,6 @@
       remote_src: yes
   
   - name: install the libraries
-    ansible.builtin.command: mpm install
+    ansible.builtin.command: npm install
     args:
       chdir: /app
