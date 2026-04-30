@@ -22,7 +22,7 @@
       name: 
       - pymysql 
       - cryptography
-      executable: pip3.13
+      executable: pip3.9
 
   - name: check root setup or not
     community.mysql.mysql_info:
